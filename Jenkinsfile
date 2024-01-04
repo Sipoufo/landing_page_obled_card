@@ -4,7 +4,7 @@ node {
     try{
         stage('Clone Repo') {
             git url: 'https://github.com/Sipoufo/landing_page_obled_card.git',
-                branch: 'master'
+                branch: 'main'
             sh 'npm install'
          }
         stage('Build docker') {
