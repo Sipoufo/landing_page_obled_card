@@ -13,7 +13,7 @@ node {
         stage('Deploy docker'){
               echo "Docker Image Tag Name: ${dockerImageTag}"
               sh "docker stop obled-fo-deploy || true && docker rm obled-fo-deploy || true"
-              sh "docker run --net=host --name obled-fo-deploy -d -p 3000:3000 obled-fo-deploy:${env.BUILD_NUMBER}"
+              sh "docker run --net=host --name obled-fo-deploy -d -p 80:80 obled-fo-deploy:${env.BUILD_NUMBER}"
         }
     }catch(e){
         throw e
